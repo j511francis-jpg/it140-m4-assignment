@@ -1,41 +1,36 @@
-"""TODO: Replace with a one-line summary of the optional practice program.
+START hilow_game
 
-Input:
-    TODO: Identify the major user inputs.
+    PRINT "Welcome to the higher/lower game!"
+    
+    REPEAT
+        PRINT "Enter the lower bound: "
+        INPUT lower_bound
+        PRINT "Enter the upper bound: "
+        INPUT upper_bound
+        
+        IF lower_bound >= upper_bound THEN
+            PRINT "Error: The lower bound must be less than the upper bound."
+        ENDIF
+    UNTIL lower_bound < upper_bound
 
-Process:
-    TODO: Summarize validation, random selection, decisions, and
-    repetition from your pseudocode.
+    secret_number = GENERATE_RANDOM_INTEGER_BETWEEN(lower_bound, upper_bound)
+    
+    PRINT "Guess a number between " + lower_bound + " and " + upper_bound + ":"
+    INPUT user_guess
 
-Output:
-    TODO: Identify the major categories of console output.
-"""
+    WHILE user_guess IS NOT EQUAL TO secret_number DO
+        
+        IF user_guess > secret_number THEN
+            PRINT "Nope, too high."
+        ELSE IF user_guess < secret_number THEN
+            PRINT "Nope, too low."
+        ENDIF
+        
+        PRINT "Guess another number:"
+        INPUT user_guess
+        
+    ENDWHILE
 
-# === Imports ===
-from random import randint
+    PRINT "You got it!"
 
-
-# === Main Function ===
-def main() -> None:
-    """Run the optional higher/lower game practice program."""
-
-    # TODO: Obtain and validate the lower and upper bounds.
-
-    # TODO: Generate a random number from the valid range using randint.
-
-    # TODO: Obtain and validate the player's first guess.
-
-    # TODO: Repeat until the player guesses the random number.
-    # Give too-low or too-high feedback for incorrect valid guesses.
-    # Obtain and validate another guess when the game continues.
-
-    # TODO: Display a success message after the correct guess.
-
-
-# === Main Guard ===
-if __name__ == "__main__":
-    main()
-
-
-# === References ===
-# TODO: Add an APA-style reference for a source you used, or delete this line.
+END hilow_game
